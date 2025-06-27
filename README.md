@@ -1,0 +1,2 @@
+# oshikatsu-nextjs
+OshiKatsu
