@@ -1,6 +1,9 @@
 import Image from "next/image";
 
 export default function Home() {
+  const analyticsId = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+  const apiSecretKey = process.env.API_SECRET_KEY; // This will be undefined on the client-side
+
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
@@ -50,6 +53,10 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        <h1>Next.js 환경 변수 예시</h1>
+        <p>분석 ID (클라이언트에서 접근 가능): {analyticsId}</p>
+        <p>API 비밀 키 (클라이언트에서는 접근 불가): {apiSecretKey}</p>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
